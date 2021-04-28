@@ -1,2 +1,2 @@
 # EpyTodo
-EpyTodo Epitech Project 2021
+## A Restful API using ExpressJS
