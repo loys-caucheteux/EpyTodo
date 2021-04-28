@@ -1,0 +1,35 @@
+{
+  "name": "b-web-200-nce-2-1-epytodo-loys.caucheteux",
+  "version": "1.0.0",
+  "description": "project epitech epytodo Loys Caucheteux & Theo Guichard",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechIT2020/B-WEB-200-NCE-2-1-epytodo-loys.caucheteux.git"
+  },
+  "keywords": [
+    "epitech",
+    "epytodo",
+    "REST",
+    "nodejs"
+  ],
+  "author": "Loys Caucheteux & Theo Guichard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechIT2020/B-WEB-200-NCE-2-1-epytodo-loys.caucheteux/issues"
+  },
+  "homepage": "https://github.com/EpitechIT2020/B-WEB-200-NCE-2-1-epytodo-loys.caucheteux#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5"
+  }
+}

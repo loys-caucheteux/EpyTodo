@@ -1,0 +1,58 @@
+version: '3.7'
+
+services:
+  db:
+    restart: always
+    container_name: db
+    image: mysql
+    volumes:
+      - todo-db:/var/lib/mysql
+      - ./docker/data:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: passwd
+    networks:
+      - db-to-back
+
+  todo:
+    container_name: todo
+    build:
+      context: todo
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    networks:
+      - db-to-back
+      - back-to-front
+
+  react:
+    restart: always
+    container_name: react
+    build:
+      context: react
+      dockerfile: Dockerfile
+    depends_on:
+      - todo
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - back-to-front
+    stdin_open: true
+
+volumes:
+  todo-db:
+
+networks:
+  db-to-back:
+    name: 'db-to-back'
+  back-to-front:
+    name: 'back-to-front'
