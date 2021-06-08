@@ -3,7 +3,7 @@ EpyTodo Epitech Project 2021
 
 Here is a todo REST API I made for an Epitech project.
 
-cd path/to/repo_dir: && npm start
+deploy : cd path/to/repo_dir && npm start
 
 It is developed using ExpressJS.
 
